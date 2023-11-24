@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f4004fb2488da4dbd29624eb14912c, type: 3}
   m_Name: UIGenerateGlobalSettings
   m_EditorClassIdentifier: 
-  BindComponetsSavePath: 
-  UILogicSavePath: 
-  UIPrefabSavePath: 
-  BindMainComponetsSavePath: 
-  UIMainLogicSavePath: 
-  UIMainPrefabSavePath: 
+  BindComponetsSavePath: Assets/GameScripts/HotFix/GameLogic/UI/BindComponents
+  UILogicSavePath: Assets/GameScripts/HotFix/GameLogic/UI/Logic
+  UIPrefabSavePath: Assets/AssetRaw/UI
+  BindMainComponetsSavePath: Assets/GameScripts/Main/Launcher/Scripts/UI/BindComponents
+  UIMainLogicSavePath: Assets/GameScripts/Main/Launcher/Scripts/UI/Logic
+  UIMainPrefabSavePath: Assets/GameScripts/Main/Launcher/Resources/AssetLoad

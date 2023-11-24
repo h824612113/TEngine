@@ -1,7 +1,11 @@
 using System.Collections.Generic;
 using System.Reflection;
 using GameBase;
+using GameLogic;
 using TEngine;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using YooAsset;
 
 /// <summary>
 /// 游戏App。
@@ -37,7 +41,28 @@ public partial class GameApp:Singleton<GameApp>
     /// </summary>
     private void StartGameLogic()
     {
-        
+        // GameModule.Scene.LoadScene(FlappySceneConfig.GameSceneName,LoadSceneMode.Single,false,100,(handle) =>
+        // {
+        //     if (handle.Status == EOperationStatus.Succeed)
+        //     {
+        //         Debug.Log("加载Game场景成功-----,打开菜单界面");
+        //         GameModule.UI.ShowUIAsync<MenuForm>();
+        //     }
+        //     else
+        //     {
+        //         Debug.Log("加载Game场景失败-----------------"+handle.LastError);
+        //     }
+        // });
+        GameModule.Fsm.DestroyFsm<IProcedureManager>();
+        var procedureManager = ModuleImpSystem.GetModule<IProcedureManager>();
+        ProcedureBase[] procedureBases =
+        {
+            new ProcedureMenu(),
+            new ProcedureGame(),
+            new ProcedureGameEnd()
+        };
+        procedureManager.Initialize(ModuleImpSystem.GetModule<IFsmManager>(),procedureBases);
+        procedureManager.StartProcedure<ProcedureMenu>();
     }
 
     /// <summary>
