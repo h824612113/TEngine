@@ -37,6 +37,7 @@ MonoBehaviour:
     m_CurUseServerChannel: 
     m_ServerChannelInfos: []
     namespace: GameLogic
+    mainnamespace: GameMain
     scriptGenerateRule:
     - uiElementRegex: m_go
       componentName: GameObject
@@ -78,6 +79,8 @@ MonoBehaviour:
       componentName: AnimationCurve
     - uiElementRegex: m_canvasGroup
       componentName: CanvasGroup
+    - uiElementRegex: m_tmpU
+      componentName: TextMeshProUGUI
   m_BybridCLRCustomGlobalSettings:
     m_Enable: 1
     HotUpdateAssemblies:

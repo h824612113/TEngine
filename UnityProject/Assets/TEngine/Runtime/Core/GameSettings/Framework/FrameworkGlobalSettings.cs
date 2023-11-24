@@ -119,8 +119,10 @@ public class FrameworkGlobalSettings
     public List<ServerChannelInfo> ServerChannelInfos => m_ServerChannelInfos;
 
     [SerializeField] private string @namespace = "GameLogic";
+    [SerializeField] private string @mainnamespace = "GameMain";
 
     public string NameSpace => @namespace;
+    public string MainNameSpace => @mainnamespace;
 
     [SerializeField] private List<ScriptGenerateRuler> scriptGenerateRule = new List<ScriptGenerateRuler>()
     {

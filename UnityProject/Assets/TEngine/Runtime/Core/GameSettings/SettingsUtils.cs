@@ -202,4 +202,9 @@ public static class SettingsUtils
     {
         return FrameworkGlobalSettings.NameSpace;
     }
+    
+    public static string GetUIMainNameSpace()
+    {
+        return FrameworkGlobalSettings.MainNameSpace;
+    }
 }

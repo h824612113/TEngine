@@ -340,7 +340,7 @@ namespace TEngine
         public async UniTask<T> CreateWidgetByPathAsync<T>(Transform parentTrans, string assetLocation, bool visible = true) where T : UIWidget, new()
         {
             GameObject goInst = await GameModule.Resource.LoadAssetAsync<GameObject>(assetLocation, gameObject.GetCancellationTokenOnDestroy());
-            goInst.transform.SetParent(parentTrans, false);
+            goInst.transform.SetParent(parentTrans);
             return CreateWidget<T>(goInst, visible);
         }
 
@@ -526,6 +526,37 @@ namespace TEngine
             }
         }
 
+        #endregion
+        
+        #region UIElement
+
+        /// <summary>
+        /// UI元素节点。
+        /// </summary>
+        protected UIElement UIElement;
+
+        /// <summary>
+        /// 检测UI元素节点。
+        /// </summary>
+        protected virtual void CheckUIElement()
+        {
+            if (rectTransform != null)
+            {
+                UIElement = rectTransform.GetComponent<UIElement>();
+            }
+        }
+
+        /// <summary>
+        /// 获取子节点脚本。
+        /// </summary>
+        /// <typeparam name="T">子节点类型。</typeparam>
+        /// <param name="index">子节点索引。</param>
+        /// <returns>子节点脚本实例。</returns>
+        protected T FChild<T>(int index) where T : Component
+        {
+            var child = UIElement.GetBindComponent<T>(index);
+            return child;
+        }
         #endregion
     }
 }
