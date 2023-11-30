@@ -173,3 +173,16 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
+    - GroupName: Entities
+      GroupDesc: "\u9884\u5236\u4F53"
+      AssetTags: base
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/AssetRaw/Entities
+        CollectorGUID: d68ee845838dffd4abbb532c6b7bf0cf
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

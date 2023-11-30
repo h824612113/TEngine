@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TEngine;
 using UnityEditor.Callbacks;
+using AudioType = TEngine.AudioType;
 
 namespace GameLogic
 {
@@ -29,7 +30,9 @@ namespace GameLogic
 		{
 			base.OnCreate();
 			Debug.Log("进入MenuForm的OnOnCreate");
+			GameModule.Audio.Play(AudioType.Music,FlappySoundMusicConfig.MENU, true);
 			m_ProcedureMenu = (ProcedureMenu)this.userDatas[0];
+			FlappyModel.Instance.isBackToMenu = false;
 		}
 		public override void OnRefresh()
 		{
@@ -40,6 +43,7 @@ namespace GameLogic
 		{
 			base.OnDestroy();
 			Debug.Log("进入MenuForm的OnDestroy");
+			GameModule.Audio.Stop(AudioType.Music, true);
 		}
 		#endregion
 

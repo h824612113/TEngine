@@ -54,7 +54,7 @@ namespace GameMain
 
             var initializationOperation = GameModule.Resource.InitPackage();
 
-            await UniTask.Delay(TimeSpan.FromSeconds(1f));
+            // await UniTask.Delay(TimeSpan.FromSeconds(1f));
 
             await initializationOperation.ToUniTask();
 
